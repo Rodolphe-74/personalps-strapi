@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "initial_questions",
+  "info": {
+    "singularName": "initial-question",
+    "pluralName": "initial-questions",
+    "displayName": "Initial question"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "question": {
+      "type": "text",
+      "required": true
+    },
+    "answer": {
+      "type": "boolean",
+      "required": true
+    },
+    "soft_skill": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::soft-skill.soft-skill",
+      "inversedBy": "initial_questions"
+    },
+    "user_questions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::user-question.user-question",
+      "inversedBy": "initial_questions"
+    }
+  }
+}

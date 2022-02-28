@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "expeditions",
+  "info": {
+    "singularName": "expedition",
+    "pluralName": "expeditions",
+    "displayName": "Expedition"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "soft_skill": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::soft-skill.soft-skill",
+      "inversedBy": "expeditions"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "soft_skills",
+  "info": {
+    "singularName": "soft-skill",
+    "pluralName": "soft-skills",
+    "displayName": "Soft skill",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "initial_questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::initial-question.initial-question",
+      "mappedBy": "soft_skill"
+    },
+    "expeditions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::expedition.expedition",
+      "mappedBy": "soft_skill"
+    }
+  }
+}

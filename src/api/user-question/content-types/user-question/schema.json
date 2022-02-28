@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_questions",
+  "info": {
+    "singularName": "user-question",
+    "pluralName": "user-questions",
+    "displayName": "User question"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "user_questions"
+    },
+    "initial_questions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::initial-question.initial-question",
+      "inversedBy": "user_questions"
+    }
+  }
+}
